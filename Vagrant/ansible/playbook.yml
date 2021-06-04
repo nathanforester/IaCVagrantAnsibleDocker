@@ -1,4 +1,4 @@
-- hosts: app
+- hosts: deploy
   become: yes
   vars:
     docker_compose_version: "1.27.4"
@@ -63,6 +63,9 @@
       command: mv ~/docker-compose /usr/local/bin/docker-compose
       when: docker_compose.stat.exists
 
+
+- hosts: app
+  become: yes    
     - name: Deploy flask app
       command: sh /home/ubuntu/ansible/script.sh
 

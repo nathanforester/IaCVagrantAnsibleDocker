@@ -10,9 +10,13 @@ sudo apt-add-repository ppa:ansible/ansible
 
 sudo apt install ansible -y
 
-sudo echo "[app]" >> /etc/ansible/hosts
+sudo echo "[deploy]" >> /etc/ansible/hosts
 
 sudo echo "192.168.33.11 ansible_connection=ssh ansible_ssh_user=vagrant ansible_ssh_pass=vagrant" >> /etc/ansible/hosts
+
+sudo echo "[app]" >> /etc/ansible/hosts
+
+sudo echo "192.168.33.12 ansible_connection=ssh ansible_ssh_user=vagrant ansible_ssh_pass=vagrant" >> /etc/ansible/hosts
 
 sudo apt-get install sshpass
 
