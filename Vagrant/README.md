@@ -14,3 +14,5 @@
 - For full business effectiveness, migration to cloud is still necessary
 
 The first part of this project has been successfully completed. Vagrant configures two virtual machines using the VirtualBox plugin: one for containerisation and one for configuration. It is now ready for part two: continuous integration and deployment.
+
+Updated: part two is now begun and development/feature branches have been implemented as good DevOps practices.
