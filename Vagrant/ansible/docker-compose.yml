@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   service1:
-    image: nathanforester/basic_movie_db:latest
+    image: ddraiggoch/basic_movie_db:latest
     build: basic_movie_db/
     ports:
         - target: 5000
