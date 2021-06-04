@@ -64,4 +64,4 @@
       when: docker_compose.stat.exists
 
     - name: Deploy flask app
-      command: sh /home/ubuntu/ansible/deploy.sh
+      command: sh /home/ubuntu/ansible/script.sh
