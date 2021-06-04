@@ -1,0 +1,35 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+
+  config.vm.box = "bento/ubuntu-20.04"
+
+ N = 3
+
+  VAGRANT_VM_PROVIDER = "virtualbox"
+  ANSIBLE_RAW_SSH_ARGS = []
+
+  (1..N-1).each do |machine_id|
+    ANSIBLE_RAW_SSH_ARGS << "-o IdentityFile=#{ENV["VAGRANT_DOTFILE_PATH"]}/machines/machine#{machine_id}/#{VAGRANT_VM_PROVIDER}/private_key"
+  end
+
+  (1..N).each do |machine_id|
+    config.vm.define "machine#{machine_id}" do |machine|
+      machine.vm.hostname = "machine#{machine_id}"
+      machine.vm.network "private_network", ip: "192.168.77.#{20+machine_id}"
+      if machine_id == N
+        machine.vm.provision "shell", path: "./provision.sh", privileged: false
+        machine.vm.provision :ansible do |ansible|
+          ansible.playbook = "playbook.yml"
+          ansible.limit = 'all'
+          ansible.inventory_path = "inventory"
+          ansible.raw_ssh_args = ANSIBLE_RAW_SSH_ARGS
+        end
+      end
+
+    end
+  end
+
+end
+
