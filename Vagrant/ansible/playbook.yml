@@ -62,10 +62,7 @@
     - name: Move docker-compose to /usr/local/bin/docker-compose
       command: mv ~/docker-compose /usr/local/bin/docker-compose
       when: docker_compose.stat.exists
-
-
-- hosts: app
-  become: yes    
+    
     - name: Deploy flask app
       command: sh /home/ubuntu/ansible/script.sh
 
