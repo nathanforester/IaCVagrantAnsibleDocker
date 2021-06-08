@@ -1,6 +1,6 @@
-#! /bin/bash
+#!/bin/bash
 
-cat ~/my_password.txt | docker login --username ddraiggoch --password-stdin
+#cat ~/my_password.txt | docker login --username ddraiggoch --password-stdin
 
 sudo docker-compose build
 

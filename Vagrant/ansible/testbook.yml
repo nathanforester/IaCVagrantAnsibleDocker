@@ -1,0 +1,6 @@
+- hosts: localhost
+  become: yes
+  tasks:
+  - name: Deploy flask app
+    shell: nohup ./script.sh
+

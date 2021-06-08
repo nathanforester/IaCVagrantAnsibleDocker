@@ -6,7 +6,7 @@ RUN apt install python3 python3-pip python3-venv -y
 
 RUN mkdir /opt/basic_movie_db
 
-COPY . /opt/basic_movie_db
+COPY /basic_movie_db /opt/basic_movie_db
 
 WORKDIR /opt/basic_movie_db
 
