@@ -18,3 +18,5 @@ The first part of this project has been successfully completed. Vagrant configur
 Updated: part two is now begun and development/feature branches have been implemented as good DevOps practices.
 
 Updated further: The app has been fully deployed on an automated process from Vagrant ---> Ansible ----> Docker & Docker Compose ----> port 5000. Recommend putting the nginx process in the playbook.yml before the app deployment (may not be 100% effective) OR somehow introducing a systemd process, creating another AMI or image of that and then running it on an entirely separate node and/or container. The app itself now has full functionality on port 5000 and its CRUD API facility is fully functional.
+
+if a test of the code is required, simply take the code and run "vagrant up" on an appropriate terminal (Windows Powershell, Gitbash, Linux etc). 
