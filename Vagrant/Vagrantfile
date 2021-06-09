@@ -21,7 +21,7 @@ Vagrant.configure("2") do |config|
     deploy.vm.network :private_network, ip: "192.168.33.11"
     deploy.vm.hostname = "app"
     deploy.hostsupdater.aliases = ["app"]
-    deploy.vm.synced_folder "basic_movie_db", "/home/ubuntu/movie_app"
+    deploy.vm.synced_folder "ansible", "/home/ubuntu/ansible"
   end
 
   config.vm.define "ansible" do |ansible|
