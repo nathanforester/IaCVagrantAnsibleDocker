@@ -4,21 +4,21 @@ from wtforms.validators import DataRequired, ValidationError
 
 from application.models import movies, Review
 
-class MoviesCheck: #customise
-    def __init__(self, message):
-        self.message = message
+#class MoviesCheck: #customise
+#    def __init__(self, message):
+#        self.message = message
 
-    def __call__(self, form, field): #sends query request to sqlalchemy db
-        all_movies = movies.query.all()
-        for movies in all_movies:
-            if movies.name == field.data:
-                raise ValidationError(self.message)
+#    def __call__(self, form, field): #sends query request to sqlalchemy db
+#        all_movies = movies.query.all()
+#        for movies in all_movies:
+#            if movies.name == field.data:
+#                raise ValidationError(self.message)
 
 class MoviesForm(FlaskForm): # customise
     name = StringField('Movie Name',
                 validators=[
                     DataRequired(),
-                    MoviesCheck(message= 'You have already added this movie')
+                    #MoviesCheck(message= 'You have already added this movie')
                 ]
             )
     submit = SubmitField('Add Movie')

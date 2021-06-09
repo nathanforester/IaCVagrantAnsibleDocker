@@ -1,6 +1,7 @@
 from application import app
+from flask import Flask
 
-#application = Flask(__name__, template_folder='/opt/basic_movie_db/templates')
+application = Flask(__name__)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')

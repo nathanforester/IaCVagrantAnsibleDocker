@@ -64,7 +64,7 @@
       when: docker_compose.stat.exists
     
     - name: Deploy flask app
-      shell: ./home/ubuntu/ansible/script.sh 
+      shell: cd /home/ubuntu/ansible && docker-compose up 
 
     - name: Install NGINX
       apt:
